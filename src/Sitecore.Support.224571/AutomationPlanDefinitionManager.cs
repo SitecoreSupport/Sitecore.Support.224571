@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Support
+﻿namespace Sitecore.Support.Marketing.Definitions.AutomationPlans
 {
   using System.Globalization;
   using Sitecore;
@@ -92,6 +92,9 @@
       Condition.Requires(source, "source").IsNotNull();
       Condition.Requires(target, "target").IsNotNull();
 
+      // Sitecore Support Fix #224571
+      target.Alias = source.Name;
+      // Sitecore Support Fix #224571
       target.ReentryMode = source.ReentryMode;
       target.ContextKeyFactoryType = source.ContextKeyFactoryType;
       target.EntryActivityId = source.EntryActivityId;
